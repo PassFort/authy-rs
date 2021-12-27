@@ -21,7 +21,7 @@ pub struct Client {
 
     api_url: String,
     api_key: String,
-    reqwest: reqwest::Client,
+    reqwest: reqwest::blocking::Client,
 }
 
 /// Status message returned by every API request.
@@ -41,7 +41,7 @@ impl Client {
             retry_wait: 250,
             api_url: api_url.into(), 
             api_key: api_key.into(),
-            reqwest: reqwest::Client::new(),
+            reqwest: reqwest::blocking::Client::new(),
         }
     }
 

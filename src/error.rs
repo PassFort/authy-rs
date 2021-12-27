@@ -65,7 +65,7 @@ impl error::Error for AuthyError {
             UnknownServerResponse(_) => "Unknown server response"
         }
     }
-    fn cause(&self) -> Option<&error::Error> {
+    fn cause(&self) -> Option<&dyn error::Error> {
         None
     }
 }
